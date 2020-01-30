@@ -29,7 +29,7 @@
         <!--contains the "header" with SOVDEX | BURN-MINER | TRADE-MINER, login button, and account name display on login-->
         <div class="container-fluid border rounded bg-dark shadow">       
             <br>
-                <h6 class="row d-flex justify-content-center text-white">SOV分散交换 | 烧矿工 | 贸易矿工</h6>
+                <h6 class="row d-flex justify-content-center text-white">SOV分散交换 | 销毁挖矿 | 交易挖矿</h6>
                 <br>
                 <button type="button" class="btn btn-primary btn-lg btn-block" id='buttontext' onclick='loginclick()'>登陆</button>
                 <br>
@@ -43,11 +43,11 @@
             <!--SOV and SVX Balance Display directly beneath "header"-->
             <div class="row row-cols-2">
                 <h6 class='col text-center'>
-                    SOV 结余
+                    SOV 余额
                     <div id='sov_balance'>...</div>
                 </h6>
                 <h6 class='col text-center'>
-                    SVX 结余
+                    SVX 余额
                     <div id='svx_balance'>...</div>
                 </h6>
             </div>
@@ -105,7 +105,7 @@
                     <input class="text-center form-control border-0" type='text' id='svx_stake_balance' readonly="readonly" value=''>
                     </p>
                     <p class="col text-center text-white">
-                    &nbsp;解押SVX 
+                    &nbsp;赎回SVX 
                         <br>         
                     <input class="text-center form-control border-0" type='text' id='svx_unstaking_balance' readonly="readonly" value=''>
                     <small id='svx_unstake_time'></small>
@@ -124,7 +124,7 @@
                     </div>
                 </div>
                 <div class="text-center text-white">
-                    <small> &nbsp;*您投入的SVX越多，您的奖金就越高</small>
+                    <small> &nbsp;*抵押的SVX越多，奖励越高</small>
                 </div>
             </div>  <!--end of container-->
         <br>   
@@ -253,7 +253,7 @@
                 <input type='checkbox' class="custom-control-input" id='checkbox-3' onclick='switch_autominer(this)'>
                 <label class="custom-control-label" for='checkbox-3' style='font-size:15px;'>自动</label>
             </div>
-            <button type="button" class="btn btn-dark btn-block col m-3 shadow" id='dotransaction_bundle' onclick='dotransaction_bundle()'>采矿倍数 x 1</button>  
+            <button type="button" class="btn btn-dark btn-block col m-3 shadow" id='dotransaction_bundle' onclick='dotransaction_bundle()'>挖矿倍数 x 1</button>  
         </div>
 
         
@@ -302,7 +302,7 @@
         </div>
 
         <div class="text-center">
-        <small>每笔交易的采矿转移</small>
+        <small>每笔转账执行的挖矿次数</small>
         </div>
       
         <div class='d-flex'>SOV转账金额:<input type='number' min="0" class='text-center form-control m-2' id='sov_burn_amount' value='210' oninput="this.value = Math.abs(this.value)"></div>
@@ -310,14 +310,14 @@
         <h6 id='svxMiningMultiplier' class="text-center">...</h6>
 
         <div class="text-center">
-            <small class="text-center">*转让更多的SOV，获得更高的挖矿乘数</small>
+            <small class="text-center">*通过转帐更多SOV获得更高的挖矿倍数</small>
         </div>
 
         <div class="row justify-content-center">
-                <small>*转移时SOV燃烧。请负责任地交易和开采</small>
+                <small>*SOV会在转帐时销毁，使用交易或挖矿功能时请注意</small>
         </div>
            
-        <button type="button" id='doinit' class='btn btn-outline-success btn-sm btn-block' onclick='doinit()'>单击此处初始化SVX进行挖掘</button>
+        <button type="button" id='doinit' class='btn btn-outline-success btn-sm btn-block' onclick='doinit()'>单击此处初始化SVX挖矿</button>
 
 
                 <script>
@@ -3494,7 +3494,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='eos_transfer_amount'  value= '1' step=".01" oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVEOS()'>发送EOS<br>收购SOV/EOS</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVEOS()'>发送EOS<br>买入SOV/EOS</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysoveosBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3504,7 +3504,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='sov_transfer_amount' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVEOS()'>发送SOV<br>出售SOV/EOS</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVEOS()'>发送SOV<br>卖出SOV/EOS</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsoveosBancorDiv">...</small>
                     <small class="text-center text-white">EOS(收费前)</small>
@@ -3550,7 +3550,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='yas_transfer_amount' value= '100' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVYAS()'>发送YAS<br>收购SOV/YAS</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVYAS()'>发送YAS<br>买入SOV/YAS</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysovyasBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3560,7 +3560,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='sov_transfer_amount0' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVYAS()'>发送SOV<br>出售SOV/YAS</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVYAS()'>发送SOV<br>卖出SOV/YAS</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsovyasBancorDiv">...</small>
                     <small class="text-center text-white">YAS(收费前)</small>
@@ -3585,7 +3585,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='dapp_transfer_amount' value= '100' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVDAPP()'>发送DAPP<br>收购SOV/DAPP</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVDAPP()'>发送DAPP<br>买入SOV/DAPP</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysovdappBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3595,7 +3595,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='sov_transfer_amount1' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVDAPP()'>发送SOV<br>出售SOV/DAPP</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVDAPP()'>发送SOV<br>卖出SOV/DAPP</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsovdappBancorDiv">...</small>
                     <small class="text-center text-white">DAPP(收费前)</small>
@@ -3622,7 +3622,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='chex_transfer_amount' value= '200' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVCHEX()'>发送CHEX<br>收购SOV/CHEX</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVCHEX()'>发送CHEX<br>买入SOV/CHEX</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysovchexBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3632,7 +3632,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='sov_transfer_amount9' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVCHEX()'>发送SOV<br>出售SOV/CHEX</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVCHEX()'>发送SOV<br>卖出SOV/CHEX</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsovchexBancorDiv">...</small>
                     <small class="text-center text-white">CHEX(收费前)</small>
@@ -3659,7 +3659,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='tpt_transfer_amount' value= '1000' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVTPT()'>发送TPT<br>收购SOV/TPT</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVTPT()'>发送TPT<br>买入SOV/TPT</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysovtptBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3669,7 +3669,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='sov_transfer_amount2' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVTPT()'>发送SOV<br>出售SOV/TPT</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVTPT()'>发送SOV<br>卖出SOV/TPT</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsovtptBancorDiv">...</small>
                     <small class="text-center text-white">TPT(收费前)</small>
@@ -3694,7 +3694,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='ndx_transfer_amount'  value= '2000' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVNDX()'>发送NDX<br>收购SOV/NDX</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVNDX()'>发送NDX<br>买入SOV/NDX</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysovndxBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3704,7 +3704,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='sov_transfer_amount3' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVNDX()'>发送SOV<br>出售SOV/NDX</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVNDX()'>发送SOV<br>卖出SOV/NDX</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsovndxBancorDiv">...</small>
                     <small class="text-center text-white">NDX(收费前)</small>
@@ -3731,7 +3731,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='peos_transfer_amount'  value= '150' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVPEOS()'>发送PEOS<br>收购SOV/PEOS</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVPEOS()'>发送PEOS<br>买入SOV/PEOS</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysovpeosBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3741,7 +3741,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='sov_transfer_amount4' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVPEOS()'>发送SOV<br>出售SOV/PEOS</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVPEOS()'>发送SOV<br>卖出SOV/PEOS</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsovpeosBancorDiv">...</small>
                     <small class="text-center text-white">PEOS(收费前)</small>
@@ -3766,7 +3766,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='pgl_transfer_amount'  value= '50' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVPGL()'>发送PGL<br>收购SOV/PGL</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVPGL()'>发送PGL<br>买入SOV/PGL</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysovpglBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3776,7 +3776,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='sov_transfer_amount5' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVPGL()'>发送SOV<br>出售SOV/PGL</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVPGL()'>发送SOV<br>卖出SOV/PGL</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsovpglBancorDiv">...</small>
                     <small class="text-center text-white">PGL(收费前)</small>
@@ -3801,7 +3801,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='dice_transfer_amount'  value= '1000' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVDICE()'>发送DICE<br>收购SOV/DICE</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVDICE()'>发送DICE<br>买入SOV/DICE</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysovdiceBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3811,7 +3811,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0" id='sov_transfer_amount6' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVDICE()'>发送SOV<br>出售SOV/DICE</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVDICE()'>发送SOV<br>卖出SOV/DICE</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsovdiceBancorDiv">...</small>
                     <small class="text-center text-white">DICE(收费前)</small>
@@ -3839,7 +3839,7 @@
             <div class="row row-cols-2">
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' id='pow_transfer_amount' step=".1"  value='.1' min="0">
-                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVPOW()'>发送POW<br>收购SOV/POW</button>
+                    <button class="btn btn-success btn-lg btn-block shadow" onclick='buySOVPOW()'>发送POW<br>买入SOV/POW</button>
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="buysovpowBancorDiv">...</small>
                     <small class="text-center text-white">SOV(收费前)</small>
@@ -3849,7 +3849,7 @@
 
                 <div class="col text-center">
                     <input class="text-center form-control mb-1" type='number' min="0.0001" id='sov_transfer_amount7' value='420' oninput="this.value = Math.abs(this.value)">
-                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVPOW()'>发送SOV<br>出售SOV/POW</button> 
+                    <button class="btn btn-danger btn-lg btn-block shadow" onclick='sellSOVPOW()'>发送SOV<br>卖出SOV/POW</button> 
                     <small class="text-center text-white">收到</small>
                     <small class="text-center text-warning" id="sellsovpowBancorDiv">...</small>
                     <small class="text-center text-white">POW(收费前)</small>
