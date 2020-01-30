@@ -116,11 +116,11 @@
                 <div class="row row-cols-2">
                     <div class="col text-center">
                         <input class="text-center form-control mb-1" type='number' min="0" id='svx_to_stake' oninput="this.value = Math.abs(this.value)">
-                        <button class="btn btn-primary btn-lg btn-block shadow" id='stakebutton' onclick='svx_to_stake_action()'>樴</button>
+                        <button class="btn btn-primary btn-lg btn-block shadow" id='stakebutton' onclick='svx_to_stake_action()'>抵押SVX</button>
                     </div>
                     <div class="col text-center">
                         <input class="text-center form-control mb-1" type='number' min="0" id='svx_to_unstake' oninput="this.value = Math.abs(this.value)">
-                        <button class="btn btn-primary btn-lg btn-block shadow" id='stakebutton' onclick='svx_to_unstake_action()'>放样</button> 
+                        <button class="btn btn-primary btn-lg btn-block shadow" id='stakebutton' onclick='svx_to_unstake_action()'>解押SVX</button> 
                     </div>
                 </div>
                 <div class="text-center text-white">
@@ -253,7 +253,7 @@
                 <input type='checkbox' class="custom-control-input" id='checkbox-3' onclick='switch_autominer(this)'>
                 <label class="custom-control-label" for='checkbox-3' style='font-size:15px;'>自动</label>
             </div>
-            <button type="button" class="btn btn-dark btn-block col m-3 shadow" id='dotransaction_bundle' onclick='dotransaction_bundle()'>采矿转移 x 1</button>  
+            <button type="button" class="btn btn-dark btn-block col m-3 shadow" id='dotransaction_bundle' onclick='dotransaction_bundle()'>采矿倍数 x 1</button>  
         </div>
 
         
